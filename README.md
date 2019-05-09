@@ -4,6 +4,10 @@ This repository impelmements a helm chart that deploys the [RocketChat-Jira inte
 
 Prerequisites: That you run the RocketChat on the same cluster, on the same namespace
 ## Instructions:
+- Clone this repository: 
+```
+git clone https://github.com/greenpeace/planet4-helm-rcjira-chart
+```
 
 - Following the instructions on the [original repo](https://github.com/gustavkarlsson/rocketchat-jira-trigger#configuration-file) create a config.toml file
 with the following data:
@@ -26,6 +30,6 @@ replacing the `WHAT_YOU_COPIED_BEFORE` with the outcome of the command you run o
 
 - Deploy your chart in the same namespace as your RocketChat like that:
 ```
-helm install --name rcjira --namespace rocketchat -f values.yaml https://github.com/greenpeace/planet4-helm-rcjira-chart
+helm install --name rcjira --namespace rocketchat -f values.yaml ./planet4-helm-rcjira-chart/
 ```
 (Where `--namespace rocketchat` you should use your own namespace )
