@@ -40,7 +40,7 @@ spec:
       volumes:
         - name: rcjira-secret-volume
           secret:
-            secretName: rcjira-secret-config
+            secretName: {{ include "rcjira.secretname" . }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}

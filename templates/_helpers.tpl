@@ -30,3 +30,11 @@ Create chart name and version as used by the chart label.
 {{- define "rcjira.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+
+{{/*
+Create secret name.
+*/}}
+{{- define "rcjira.secretname" -}}
+{{- printf "%s-%s-secret" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
