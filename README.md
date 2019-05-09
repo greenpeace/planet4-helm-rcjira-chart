@@ -33,3 +33,9 @@ replacing the `WHAT_YOU_COPIED_BEFORE` with the outcome of the command you run o
 helm install --name rcjira --namespace rocketchat -f values.yaml ./planet4-helm-rcjira-chart/
 ```
 (Where `--namespace rocketchat` you should use your own namespace )
+
+- If you want to update an existing installation, make sure you have pulled the latest version of the chart (`git pull`)
+and run the following: 
+```
+helm upgrade --install --force --wait rcjira --namespace=rocketchat -f values.yaml ./planet4-helm-rcjira-chart/
+```
