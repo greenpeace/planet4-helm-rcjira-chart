@@ -27,10 +27,6 @@ spec:
             - name: http
               containerPort: 4567
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
           volumeMounts:
             - name: rcjira-secret-volume
               mountPath: /app/config.toml
