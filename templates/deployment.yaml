@@ -27,6 +27,16 @@ spec:
             - name: http
               containerPort: 4567
               protocol: TCP
+          readinessProbe:
+            tcpSocket:
+              port: 4567
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 4567
+            initialDelaySeconds: 15
+            periodSeconds: 20
           volumeMounts:
             - name: rcjira-secret-volume
               mountPath: /app/config.toml
